@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+<meta charset="UTF-8">
+<title>Todo App</title>
+<body>
+<!--react core api-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.js"></script>
+<!--react for dom manipulate-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"></script>
+<!--Transform ES6+ to ES5-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+
+<div id = 'app'></div>
+<script type="text/babel">
+//使用JSX可以在Javascript 內使用類似html的語法
+//好處.
+// -可使用 map, arrow, if else ...等語法
+// -可以清楚知道網頁及元件的結構
+    var app = (
+            <div>Hello world</div>
+    );
+
+//使用 render function, 將element 渲染至指定位置之DOM node
+//ps. render的  element參數一次只能有一個 根節點(若要傳多個元素必須要有一個tag包起來)
+    ReactDOM.render(
+            app, //react element
+            document.getElementById('app') // DOM container node
+    );
+</script>
+
+</body>
+</html>
