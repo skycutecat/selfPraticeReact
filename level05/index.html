@@ -16,7 +16,16 @@
 <!-- window object: http://www.w3schools.com/js/js_window.asp-->
 <script>window.APP = {}</script>
 <!-- 2. 引入 TodoApp.js -->
+<!-- LesNote
+    - 此章節重點是將個元件模組化
+    - React原件事層層包覆,include的順序要正確,否則再生成元件的時候會有error
+-->
+<script type="text/babel" src="./TodoItem.js"></script>
+<script type="text/babel" src="./TodoList.js"></script>
+<script type="text/babel" src="./InputField.js"></script>
+<script type="text/babel" src="./TodoHeader.js"></script>
 <script type="text/babel" src="./TodoApp.js"></script>
+
 <script type="text/babel">
     //3. 從 window.App 中，取得 TodoApp 元件
     const { TodoApp } = window.APP;
@@ -26,18 +35,7 @@
             <TodoApp/>, //4. 將 TodoApp 渲染至 app中
             document.getElementById('app')
     );
-    //全域變數: var. ES6 語法 區域變數：let const.
 
-    // out:  out  -> in -> out, 即使是物件宣告成let 也有區域變數的效果
-    let testObj = new Object();
-    testObj.out = 'out'
-    console.log(testObj.out);
-    if(true){
-        let testObj = new Object();
-        testObj.out = 'in'
-        console.log(testObj.out);
-    }
-    console.log(testObj.out);
 </script>
 
 </body>
