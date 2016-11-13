@@ -36,11 +36,13 @@ class TodoItem extends React.Component{
     renderEditMode(){
         const { title,onUpdate} = this.props
         return (
-            //不可控元件寫法
+
             <InputField
                 autoFocus
                 placeholder = "代辦事項"
-                defaultValue = {title}
+                //不可控元件寫法
+                //defaultValue = {title}
+                value = {title}
                 onBlur = {this.togleEditMode}
                 onKeyDown = { (e) =>{
                     if( e.keyCode === 27){
@@ -53,24 +55,12 @@ class TodoItem extends React.Component{
                     this.toggleEditMode()
                 }}
             />
-            //可控元件寫法
-            // <input
-            //     autoFocus
-            //     placeholder = "代辦事項"
-            //     value = {title}
-            //     onBlur = {this.togleEditMode}
-            //     onKeyDown = { (e) =>{
-            //         if( e.keyCode === 27){
-            //             e.preventDefault()
-            //             this.togleEditMode()
-            //         }
-            //     }}
-            // />
         );
     }
 
 
 
 }
-window.APP.TodoItem = TodoItem;
+window.APP.TodoItem = TodoItem
+
 
